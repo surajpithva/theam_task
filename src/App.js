@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import Dark from "./Components/Dark";
+import { Header } from "./Components/Header";
+import ToggleButton from "./Components/Light";
+import Light, { myElement } from "./Components/Light";
+import Toggle from "./Components/Toggle";
 
-function App() {
+import "./style.css";
+// function App() {
+//   return <h1>hello suraj</h1>;
+// }
+
+const AppLayout = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Toggle />
+    </>
   );
-}
+};
 
-export default App;
+export default AppLayout;

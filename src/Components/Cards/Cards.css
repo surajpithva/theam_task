@@ -1,0 +1,19 @@
+.Card {
+    width: 200px;
+    border: 3px rgb(62, 106, 105) solid;
+    padding: 10px;
+    margin: 10px;
+}
+
+.dark-mode .Card {
+    border: 3px rgb(0, 255, 251) solid;
+}
+
+.Card>img {
+    width: 100%;
+}
+
+.cardsList {
+    display: flex;
+    justify-content: center;
+}

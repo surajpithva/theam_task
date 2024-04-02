@@ -1,9 +1,5 @@
-import Dark from "./Components/Dark";
-import { Header } from "./Components/Header";
-import ToggleButton from "./Components/Light";
-import Light, { myElement } from "./Components/Light";
-import Toggle from "./Components/Toggle";
-
+import { Header, Toggle } from "./Components/Header/Header";
+import { Cards } from "./Components/Cards/Cards";
 import "./style.css";
 // function App() {
 //   return <h1>hello suraj</h1>;
@@ -14,6 +10,13 @@ const AppLayout = () => {
     <>
       <Header />
       <Toggle />
+      <div className="cardsList">
+        <Cards />
+        <Cards />
+        <Cards />
+        <Cards />
+        <Cards />
+      </div>
     </>
   );
 };

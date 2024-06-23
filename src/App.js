@@ -1,24 +1,21 @@
-import { Header, Toggle } from "./Components/Header/Header";
-import { Cards } from "./Components/Cards/Cards";
-import "./style.css";
-// function App() {
-//   return <h1>hello suraj</h1>;
-// }
+// import "./App.css";
+import Sidebar from "./components/Sidebar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-const AppLayout = () => {
+import AddProduct from "./pages/AddProduct";
+import GetProducts from "./pages/product";
+import EditProduct from "./pages/EditProduct";
+function App() {
   return (
-    <>
-      <Header />
-      <Toggle />
-      <div className="cardsList">
-        <Cards />
-        <Cards />
-        <Cards />
-        <Cards />
-        <Cards />
-      </div>
-    </>
+    <Router>
+      <Sidebar />
+      <Routes>
+        <Route path="/add-product" element={<AddProduct />} />
+        <Route path="/view-product" element={<GetProducts />} />
+        <Route path="/edit-product/:id" element={<EditProduct />} />
+      </Routes>
+    </Router>
   );
-};
+}
 
-export default AppLayout;
+export default App;

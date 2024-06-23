@@ -10,6 +10,7 @@ function App() {
     <Router>
       <Sidebar />
       <Routes>
+        <Route path="/" element={<GetProducts />} />
         <Route path="/add-product" element={<AddProduct />} />
         <Route path="/view-product" element={<GetProducts />} />
         <Route path="/edit-product/:id" element={<EditProduct />} />

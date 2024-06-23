@@ -17,9 +17,9 @@ const GetProducts = () => {
     dispatch(AllProduct());
   }, [dispatch]);
 
-  const { deleteProd, deleteLoading, deleteError } = useSelector(
-    (state) => state.deleteProduct
-  );
+  // const { deleteProd, deleteLoading, deleteError } = useSelector(
+  //   (state) => state.deleteProduct
+  // );
 
   const deleteProduct = (_id) => {
     Swal.fire({
@@ -34,6 +34,7 @@ const GetProducts = () => {
       if (result.isConfirmed) {
         dispatch(deleteProducts(_id)).then(() => {
           Swal.fire("Deleted!", "Your file has been deleted.", "success");
+          dispatch(AllProduct()); // re-fetch products again
         });
       }
     });

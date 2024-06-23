@@ -103,7 +103,7 @@ const productSlice = createSlice({
 const deleteproductSlice = createSlice({
   name: "allProducts",
   initialState: {
-    products: [], // Include products in the initial state
+    products: [],
     deleteProd: null,
     deleteLoading: false,
     deleteError: null,

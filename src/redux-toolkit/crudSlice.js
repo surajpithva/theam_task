@@ -187,6 +187,7 @@ const EditProductSlice = createSlice({
       });
   },
 });
+
 export const EditProductSliceReducer = EditProductSlice.reducer;
 export const AddProductSliceReducer = AddProductSlice.reducer;
 export const deleteProductSliceReducer = deleteproductSlice.reducer;

@@ -15,12 +15,23 @@ const EditProduct = () => {
   const existingProduct = products?.find((product) => product._id === id);
 
   const [updateName, setUpdateName] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [isNameChanged, setIsNameChanged] = useState(false); // To track if the name has been changed
+  const [category, setCategory] = useState("");
+  const [color, setColor] = useState("");
+  const [price, setPrice] = useState("");
 
+
+  const [loading, setLoading] = useState(false);
+  const [isCategoryChanged, setIsCategoryChanged] = useState(false); // To track if the name has been changed
+  const [isNameChanged, setIsNameChanged] = useState(false); // To track if the name has been changed
+  const [isPriceChanged, setIsPriceChanged] = useState(false); // To track if the name has been changed
+  const [isColorChanged, setIsColorChanged] = useState(false); // To track if the name has been changed
+  
   useEffect(() => {
     if (existingProduct) {
       setUpdateName(existingProduct.name);
+      setCategory(existingProduct.category);
+      setColor(existingProduct.color);
+      setPrice(existingProduct.price)
     }
   }, [existingProduct]);
 
@@ -31,6 +42,9 @@ const EditProduct = () => {
       const updatedProduct = {
         id: existingProduct._id,
         name: updateName,
+        color,
+        price,
+        category
       };
 
       // Check if name is changed
@@ -85,8 +99,43 @@ const EditProduct = () => {
               value={updateName}
               onChange={(e) => {
                 setUpdateName(e.target.value);
-                setIsNameChanged(true); // Set isNameChanged to true when input value changes
-              }}
+                setIsNameChanged(true);               }}
+              className="w-full px-4 py-2 border rounded mt-2"
+              required
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-700">Category</label>
+            <input
+              type="text"
+              value={category}
+              onChange={(e) => {
+                setCategory(e.target.value);
+                setIsCategoryChanged(true);               }}
+              className="w-full px-4 py-2 border rounded mt-2"
+              required
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-700">Color</label>
+            <input
+              type="text"
+              value={color}
+              onChange={(e) => {
+                setColor(e.target.value);
+                setIsColorChanged(true);               }}
+              className="w-full px-4 py-2 border rounded mt-2"
+              required
+            />
+          </div>
+          <div className="mb-4">
+            <label className="block text-gray-700">Price</label>
+            <input
+              type="text"
+              value={price}
+              onChange={(e) => {
+                setPrice(e.target.value);
+                setIsPriceChanged(true);               }}
               className="w-full px-4 py-2 border rounded mt-2"
               required
             />

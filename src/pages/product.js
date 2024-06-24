@@ -72,6 +72,9 @@ const GetProducts = () => {
                         <th scope="col" className="p-4">
                           Price
                         </th>
+                        <th scope="col" className="p-4">
+                          Actions
+                        </th>
                       </tr>
                     </thead>
                     <tbody>
